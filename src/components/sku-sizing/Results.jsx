@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { calculateConfig, calculateCosts, generateTerraformCode } from '../utils/calculator'
+import { calculateConfig, calculateCosts, generateTerraformCode } from '../../utils/calculator'
 
 export default function Results({ answers, onBack, onRestart }) {
   const [copied, setCopied] = useState(false)
