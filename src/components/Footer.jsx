@@ -7,7 +7,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <a href="/" className="inline-block mb-4">
               <img
-                src="/Helioscrypt_Logo_whitelila_72ppi.png"
+                src={`${import.meta.env.BASE_URL}Helioscrypt_Logo_whitelila_72ppi.png`}
                 alt="HeliosCrypt"
                 className="h-10 w-auto"
               />
