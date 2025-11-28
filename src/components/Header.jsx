@@ -5,7 +5,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           <a href="https://helioscrypt.com" className="flex items-center gap-3">
             <img
-              src="/Helioscrypt_Logo_whitelila_72ppi.png"
+              src={`${import.meta.env.BASE_URL}Helioscrypt_Logo_whitelila_72ppi.png`}
               alt="HeliosCrypt"
               className="h-10 w-auto"
             />
