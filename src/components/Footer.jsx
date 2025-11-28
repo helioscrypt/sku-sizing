@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <a href="/" className="inline-block mb-4">
+            <a href="#" className="inline-block mb-4">
               <img
                 src={`${import.meta.env.BASE_URL}Helioscrypt_Logo_whitelila_72ppi.png`}
                 alt="HeliosCrypt"
