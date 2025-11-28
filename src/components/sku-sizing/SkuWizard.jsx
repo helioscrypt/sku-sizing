@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { questions } from '../data/questions'
+import { questions } from '../../data/questions'
 import Results from './Results'
 
-export default function SkuWizard({ onBack }) {
+export default function SkuWizard() {
   const [currentStep, setCurrentStep] = useState(0)
   const [answers, setAnswers] = useState({})
   const [showResults, setShowResults] = useState(false)
@@ -58,19 +58,8 @@ export default function SkuWizard({ onBack }) {
   }
 
   return (
-    <section className="pt-24 pb-20 min-h-screen">
+    <section className="pb-20 min-h-screen">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Back Button */}
-        <button
-          onClick={onBack}
-          className="flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors"
-        >
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Back to Home
-        </button>
-
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2">

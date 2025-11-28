@@ -1,4 +1,4 @@
-export default function Hero({ onStartWizard }) {
+export default function Hero({ onStartTools, onSelectTool }) {
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background Effects */}
@@ -13,29 +13,29 @@ export default function Hero({ onStartWizard }) {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
             <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-sm text-gray-300">Free Azure Sizing Tool</span>
+            <span className="text-sm text-gray-300">Free Azure Planning Tools</span>
           </div>
 
           {/* Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-            <span className="text-white">Right-Size Your</span>
+            <span className="text-white">Plan Your</span>
             <br />
             <span className="gradient-text">Azure Landing Zone</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-            Answer a few simple questions to get personalized SKU recommendations for your
-            Azure Firewall, Bastion, VPN Gateway, and more. Optimized for cost and performance.
+            Two powerful tools to help you design your Azure infrastructure.
+            Right-size your SKUs and plan your network CIDR ranges — optimized for cost and scalability.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
-              onClick={onStartWizard}
+              onClick={onStartTools}
               className="group w-full sm:w-auto px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-helio-600 to-helio-500 hover:from-helio-500 hover:to-helio-400 rounded-xl transition-all duration-200 shadow-lg shadow-helio-600/30 hover:shadow-helio-500/50"
             >
-              Start Sizing Tool
+              Start Planning
               <svg className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -46,6 +46,38 @@ export default function Hero({ onStartWizard }) {
             >
               Talk to an Expert
             </a>
+          </div>
+
+          {/* Tool Cards */}
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <button
+              onClick={() => onSelectTool('sku')}
+              className="p-6 rounded-xl bg-white/5 border border-white/10 text-left hover:border-helio-500/50 hover:bg-white/10 transition-all cursor-pointer"
+            >
+              <div className="w-12 h-12 rounded-lg bg-helio-600/20 flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-helio-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">SKU Sizing</h3>
+              <p className="text-sm text-gray-400">
+                Get personalized recommendations for Azure Firewall, Bastion, VPN Gateway, and more based on your workload requirements.
+              </p>
+            </button>
+            <button
+              onClick={() => onSelectTool('cidr')}
+              className="p-6 rounded-xl bg-white/5 border border-white/10 text-left hover:border-helio-500/50 hover:bg-white/10 transition-all cursor-pointer"
+            >
+              <div className="w-12 h-12 rounded-lg bg-blue-600/20 flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">CIDR Planner</h3>
+              <p className="text-sm text-gray-400">
+                Plan your hub-spoke network with automatic subnet allocation, growth reservation, and Terraform output.
+              </p>
+            </button>
           </div>
 
           {/* Trust Indicators */}
@@ -74,7 +106,7 @@ export default function Hero({ onStartWizard }) {
           </div>
         </div>
 
-        {/* Preview Image */}
+                {/* Preview Image */}
         <div className="mt-16 relative">
           <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent z-10"></div>
           <div className="gradient-border rounded-xl overflow-hidden glow">

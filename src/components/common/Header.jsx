@@ -1,9 +1,20 @@
-export default function Header() {
+export default function Header({ onNavigate }) {
+  const handleNavClick = (e, section) => {
+    if (onNavigate) {
+      e.preventDefault()
+      onNavigate(section)
+    }
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-dark-950/80 backdrop-blur-lg border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="flex items-center gap-3">
+          <a
+            href="#"
+            onClick={(e) => handleNavClick(e, 'home')}
+            className="flex items-center gap-3"
+          >
             <img
               src={`${import.meta.env.BASE_URL}Helioscrypt_Logo_whitelila_72ppi.png`}
               alt="HeliosCrypt"
@@ -12,17 +23,30 @@ export default function Header() {
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#tool" className="text-sm text-gray-400 hover:text-white transition-colors">
+            <a
+              href="#tool"
+              onClick={(e) => handleNavClick(e, 'tool')}
+              className="text-sm text-gray-400 hover:text-white transition-colors"
+            >
               Sizing Tool
             </a>
-            <a href="#features" className="text-sm text-gray-400 hover:text-white transition-colors">
+            <a
+              href="#features"
+              onClick={(e) => handleNavClick(e, 'features')}
+              className="text-sm text-gray-400 hover:text-white transition-colors"
+            >
               Features
             </a>
-            <a href="#contact" className="text-sm text-gray-400 hover:text-white transition-colors">
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, 'contact')}
+              className="text-sm text-gray-400 hover:text-white transition-colors"
+            >
               Contact
             </a>
             <a
               href="#contact"
+              onClick={(e) => handleNavClick(e, 'contact')}
               className="px-4 py-2 text-sm font-medium text-white bg-helio-600 hover:bg-helio-500 rounded-lg transition-colors"
             >
               Get in Touch

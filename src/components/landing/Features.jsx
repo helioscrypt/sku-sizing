@@ -39,6 +39,16 @@ const features = [
     description: 'Dedicated private connectivity from 1 Gbps to 10 Gbps for enterprise workloads.',
     skus: ['Standard', 'High Perf', 'Ultra'],
   },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+      </svg>
+    ),
+    title: 'Network / CIDR',
+    description: 'Plan hub-spoke topologies with automatic subnet allocation and growth reservation.',
+    skus: ['Hub', 'Spokes', 'Subnets'],
+  },
 ]
 
 export default function Features() {
@@ -54,11 +64,11 @@ export default function Features() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex flex-wrap justify-center gap-6">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group p-6 bg-dark-800/50 rounded-xl border border-white/5 hover:border-helio-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-helio-600/10"
+              className="group p-6 bg-dark-800/50 rounded-xl border border-white/5 hover:border-helio-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-helio-600/10 w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
             >
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-helio-600/20 to-helio-400/20 flex items-center justify-center text-helio-400 mb-4 group-hover:scale-110 transition-transform">
                 {feature.icon}
